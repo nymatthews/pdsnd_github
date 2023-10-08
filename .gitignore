@@ -1,1 +1,6 @@
 .github/**
+# Ignore .csv files
+*.csv
+
+# Ignore Mac system files
+.DS_Store
