@@ -138,11 +138,11 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    total_travel_time = df['Trip Duration'].sum() / 60
+    total_travel_time = round(df['Trip Duration'].sum() / 60)
     print('The total travel time is', total_travel_time, 'minutes')
 
     # display mean travel time
-    average_travel_time = df['Trip Duration'].mean() / 60
+    average_travel_time = round(df['Trip Duration'].mean() / 60)
     print('The average travel time is', average_travel_time, 'minutes')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -173,9 +173,9 @@ def user_stats(df):
     
     print('\nBirth Year')
     try:
-        earliest_year = df['Birth Year'].min()
-        recent_year = df['Birth Year'].max()
-        common_year = df['Birth Year'].mode()[0]
+        earliest_year = int(df['Birth Year'].min())
+        recent_year = int(df['Birth Year'].max())
+        common_year = int(df['Birth Year'].mode()[0])
         print('Earliest user birth year:', earliest_year)
         print('Most recent user birth year:', recent_year)
         print('Most common user birth year:', common_year)
